@@ -2,7 +2,7 @@
   File: index.html
   Author: UG.
   Created: 2025-07-19
-  Last Updated: 2025-08-02
+  Last Updated: 2025-08-03
   HTML Version: WHATWG HTML Living Standard
 
   License: MIT License
@@ -37,6 +37,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
+    <title>VirtuaCafe</title>
 </head>
 
 <body>
@@ -58,7 +59,16 @@
 
     <script src="items.js"></script>
     <script>
+        const newTime = 10 * (24 * 60 * 60 * 1000);          // "NEW" 表示はリリースから10日間のみ
         const pad = (n,d) => n.toString().padStart(d, '0');
+
+        function check_new(date) {
+            const nowTime = new Date();
+            const relTime = new Date(date);
+
+            if((nowTime - relTime) > newTime || !date ) return 0;
+            else return 1;
+        }
 
         function main() {
             //
@@ -73,11 +83,11 @@
                         let ntitle = items[i+1];
                         let nfile  = items[i+2];
                         let ndate  = items[i+3];
-                        sbuf  = `<a download="`+nfile+`" href="./`+nfile+`">`;
-                        sbuf += ntitle+` </a><span class="new">NEW</span>`;
+                        sbuf  = `<a download="`+nfile+`" href="./`+nfile+`">`+ntitle+` </a>`;
 
-                    // 時間チェックを挿入する
-
+                        if(check_new(ndate)) {
+                            sbuf += `<span class="new">NEW</span>`;
+                        }
                         document.querySelector(`#tgX68K_${pad(Math.floor(i/n),3)}`).innerHTML = sbuf;
                     }
                 });
@@ -95,9 +105,13 @@
                         let nURL   = items[i+2];
                         let ndate  = items[i+3];
                         if( nURL ) {
-                            sbuf = `<a href="./`+nURL+`">`+ntitle+`</a>`;
+                            sbuf = `<a href="./`+nURL+`">`+ntitle+` </a>`;
                         } else {
                             sbuf = ntitle;
+                        }
+
+                        if(check_new(ndate)) {
+                            sbuf += `<span class="new">NEW</span>`;
                         }
                         document.querySelector(`#tgKANCOLLE_${pad(Math.floor(i/n),3)}`).innerHTML = sbuf;
                     }
