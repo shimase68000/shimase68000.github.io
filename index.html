@@ -1,3 +1,30 @@
+<!--
+  File: index.html
+  Author: UG.
+  Created: 2025-07-19
+  Last Updated: 2025-08-02
+  HTML Version: WHATWG HTML Living Standard
+
+  License: MIT License
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to deal
+  in the Software without restriction, including without limitation the rights
+  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in all
+  copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  SOFTWARE.
+-->
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -9,70 +36,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
-    <style>
-        body {
-            background: #f0f0f0;
-            font-family: 'Noto Serif Japanese', serif;
-            margin: 0;
-            padding: 1rem;
-            color: #333;
-        }
-
-        header {
-            text-align: center;
-            padding: 1rem 0;
-        }
-
-        .title_text {
-            font-family: 'Fredericka the Great', cursive;
-            font-size: 3rem;
-            font-weight: bold;
-            color: #444;
-            margin-bottom: 1rem;
-        }
-
-        .new {
-            font-family: 'Roboto', sans-serif;
-            vertical-align: super;
-            color: #f00;
-            font-size: 0.7em;
-            font-weight: normal;
-            background: #fee;
-            padding: 0 0.2em;
-            border-radius: 3px;
-        }
-
-        section {
-            max-width: 800px;
-            margin: 1rem auto;
-            padding: 0 1rem;
-        }
-
-        h2 {
-            font-size: 1.2rem;
-            margin-top: 1.5rem;
-            margin-bottom: 0.5rem;
-            border-bottom: 1px solid #ccc;
-            padding-bottom: 0.2rem;
-        }
-
-        a {
-            color: #0056b3;
-            text-decoration: underline;
-        }
-
-        a:hover {
-            color: #003d80;
-        }
-
-        footer p {
-            text-align: center;
-            font-size: 0.9rem;
-            color: #666;
-            margin-top: 2rem;
-        }
-
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -80,20 +44,93 @@
         <h1 class="title_text">VirtuaCafe</h1>
     </header>
 
-    <section>
-        <h2>X68000</h2>
-        <p><a download="OEDV001.LZH" href="./OEDV001.LZH">OED File Viewer Prototype version 0.01 </a><span class="new">NEW</span></p>
-        <p><a download="OE101.LZH" href="./OE101.LZH">OPM Tone Editor 'Ｎ' version 1.01 </a><span class="new">NEW</span></p>
+    <section id="section-x68k">
+        <h2>X680x0</h2>
     </section>
 
-    <section>
+    <section id="section-kancolle">
         <h2>艦これ</h2>
-        <p><a href="./kc_tuyu2025">2025梅雨イベント てるてる坊主計算</a></p>
-        <p>2025節分イベント 豆計算</p>
     </section>
 
     <footer>
         <p>&copy; 2025 UG. All rights reserved.</p>
     </footer>
+
+    <script src="items.js"></script>
+    <script>
+        const pad = (n,d) => n.toString().padStart(d, '0');
+
+        function main() {
+            //
+            // X680x0
+            //
+            if( item_x68000 ) {
+                const n = item_x68000[0];
+                const items = item_x68000.slice(1);
+                items.forEach((_, i) => {
+                    if(i%n === 0) {
+                        let ntype  = items[i];
+                        let ntitle = items[i+1];
+                        let nfile  = items[i+2];
+                        let ndate  = items[i+3];
+                        sbuf  = `<a download="`+nfile+`" href="./`+nfile+`">`;
+                        sbuf += ntitle+` </a><span class="new">NEW</span>`;
+
+                    // 時間チェックを挿入する
+
+                        document.querySelector(`#tgX68K_${pad(Math.floor(i/n),3)}`).innerHTML = sbuf;
+                    }
+                });
+            }
+            //
+            // 艦これ
+            //
+            if( item_kancolle ) {
+                const n = item_kancolle[0];
+                const items = item_kancolle.slice(1);
+                items.forEach((_, i) => {
+                    if(i%n === 0) {
+                        let ntype  = items[i];
+                        let ntitle = items[i+1];
+                        let nURL   = items[i+2];
+                        let ndate  = items[i+3];
+                        if( nURL ) {
+                            sbuf = `<a href="./`+nURL+`">`+ntitle+`</a>`;
+                        } else {
+                            sbuf = ntitle;
+                        }
+                        document.querySelector(`#tgKANCOLLE_${pad(Math.floor(i/n),3)}`).innerHTML = sbuf;
+                    }
+                });
+            }
+        }
+
+        const section_x68k = document.getElementById("section-x68k");
+        if((item_x68000.length > 0) && section_x68k ) {
+            const n = item_x68000[0];
+            item_x68000.slice(1).forEach((_, i) => {
+                if(i%n === 0) {
+                    const p = document.createElement("p");
+                    p.id = `tgX68K_${pad(Math.floor(i/n),3)}`;
+                    section_x68k.appendChild(p);
+                }
+            });
+         }
+
+        const section_kancolle = document.getElementById("section-kancolle");
+        if((item_kancolle.length > 0) && section_kancolle ) {
+            const n = item_kancolle[0];
+            item_kancolle.slice(1).forEach((_, i) => {
+                if(i%n === 0) {
+                    const p = document.createElement("p");
+                    p.id = `tgKANCOLLE_${pad(Math.floor(i/n),3)}`;
+                    section_kancolle.appendChild(p);
+                }
+            });
+        }
+
+        main();
+
+    </script>
 </body>
 </html>
