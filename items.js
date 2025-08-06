@@ -2,7 +2,7 @@
   File: items.js
   Author: UG.
   Created: 2025-08-02
-  Last Updated: 2025-08-02
+  Last Updated: 2025-08-06
   Description: 
     各カテゴリ（X68000、艦これなど）のアイテム定義を格納するデータファイル。
     HTML本体から <script src="items.js"> により読み込まれる。
@@ -33,8 +33,8 @@
         // Item of X68000
         const item_x68000 = [
             4,
-            ITEM_DOWNLOAD, "OED File Viewer Prototype version 0.01", "OEDV001.LZH", "2025-08-01T12:00:00",
-            ITEM_DOWNLOAD, "OPM Tone Editor 'Ｎ' version 1.01", "OE101.LZH", "2025-07-27T09:50:00"
+            ITEM_DOWNLOAD, "OPM Tone Editor 'Ｎ' version 1.02", "OE102.LZH", "2025-08-06T11:20:00",
+            ITEM_DOWNLOAD, "OED File Viewer Prototype version 0.01", "OEDV001.LZH", "2025-08-01T12:00:00"
         ];
 
         // Item of 艦これ
