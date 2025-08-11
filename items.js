@@ -2,7 +2,7 @@
   File: items.js
   Author: UG.
   Created: 2025-08-02
-  Last Updated: 2025-08-06
+  Last Updated: 2025-08-11
   Description: 
     各カテゴリ（X68000、艦これなど）のアイテム定義を格納するデータファイル。
     HTML本体から <script src="items.js"> により読み込まれる。
@@ -32,15 +32,22 @@
 
         // Item of X68000
         const item_x68000 = [
-            4,
+            "X680x0",
+            5,
             ITEM_DOWNLOAD, "OPM Tone Editor 'Ｎ' version 1.02", "OE102.LZH", "2025-08-06T11:20:00",
-            ITEM_DOWNLOAD, "OED File Viewer Prototype version 0.01", "OEDV001.LZH", "2025-08-01T12:00:00"
+                           "２ファイル・２音色データを並行して編集可能なOPM音色エディタ",
+            ITEM_DOWNLOAD, "OED File Viewer Prototype version 0.01", "OEDV001.LZH", "2025-08-01T12:00:00",
+                           "OPM Tone Editorで作成したOEDファイルのヘッダ情報を表示するビューア"
         ];
 
         // Item of 艦これ
         const item_kancolle = [
-            4,
+            "艦これ",
+            5,
             ITEM_WEBTOOL, "2025梅雨イベント てるてる坊主計算", "./kc_tuyu2025", "2025-07-02T19:00:00",
-            ITEM_WEBTOOL, "2025節分イベント 豆計算", "", ""
+                          "2025年梅雨イベントのてるてる坊主数計算ツール（開催期間：2025-05-30～2025-06-27）",
+            ITEM_WEBTOOL, "2025節分イベント 豆計算", "", "",
+                          "2025年節分イベントの豆数計算ツール（開催期間：2025-01-28～2025-02-28）",
         ];
 
+        const items = [ item_x68000, item_kancolle ];

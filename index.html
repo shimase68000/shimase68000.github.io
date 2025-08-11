@@ -2,7 +2,7 @@
   File: index.html
   Author: UG.
   Created: 2025-07-19
-  Last Updated: 2025-08-03
+  Last Updated: 2025-08-11
   HTML Version: WHATWG HTML Living Standard
 
   License: MIT License
@@ -45,105 +45,95 @@
         <h1 class="title_text">VirtuaCafe</h1>
     </header>
 
-    <section id="section-x68k">
-        <h2>X680x0</h2>
-    </section>
-
-    <section id="section-kancolle">
-        <h2>艦これ</h2>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 UG. All rights reserved.</p>
-    </footer>
-
     <script src="items.js"></script>
     <script>
-        const newTime = 10 * (24 * 60 * 60 * 1000);          // "NEW" 表示はリリースから10日間のみ
+        const STR_FOOTER = `&copy; 2025 UG. All rights reserved.`;
+        const newTime = 10 * (24 * 60 * 60 * 1000);                  // "NEW" 表示はリリースから10日間のみ
         const pad = (n,d) => n.toString().padStart(d, '0');
 
         function check_new(date) {
+            if (!date) return 0;
             const nowTime = new Date();
             const relTime = new Date(date);
-
-            if((nowTime - relTime) > newTime || !date ) return 0;
-            else return 1;
+            return (nowTime - relTime) <= newTime;
         }
 
-        function main() {
-            //
-            // X680x0
-            //
-            if( item_x68000 ) {
-                const n = item_x68000[0];
-                const items = item_x68000.slice(1);
-                items.forEach((_, i) => {
-                    if(i%n === 0) {
-                        let ntype  = items[i];
-                        let ntitle = items[i+1];
-                        let nfile  = items[i+2];
-                        let ndate  = items[i+3];
-                        sbuf  = `<a download="`+nfile+`" href="./`+nfile+`">`+ntitle+` </a>`;
+        function buildSections() {
+            items.forEach((data, i) => {
+                if (!data || data.length < 2) return;
 
-                        if(check_new(ndate)) {
-                            sbuf += `<span class="new">NEW</span>`;
-                        }
-                        document.querySelector(`#tgX68K_${pad(Math.floor(i/n),3)}`).innerHTML = sbuf;
-                    }
-                });
-            }
-            //
-            // 艦これ
-            //
-            if( item_kancolle ) {
-                const n = item_kancolle[0];
-                const items = item_kancolle.slice(1);
-                items.forEach((_, i) => {
-                    if(i%n === 0) {
-                        let ntype  = items[i];
-                        let ntitle = items[i+1];
-                        let nURL   = items[i+2];
-                        let ndate  = items[i+3];
-                        if( nURL ) {
-                            sbuf = `<a href="./`+nURL+`">`+ntitle+` </a>`;
-                        } else {
-                            sbuf = ntitle;
-                        }
+                // <section>
+                const section = document.createElement("section");
+                section.id = `section-cat${i}`;
 
-                        if(check_new(ndate)) {
-                            sbuf += `<span class="new">NEW</span>`;
-                        }
-                        document.querySelector(`#tgKANCOLLE_${pad(Math.floor(i/n),3)}`).innerHTML = sbuf;
-                    }
-                });
-            }
-        }
+                // <h2> タイトル
+                const h2 = document.createElement("h2");
+                h2.textContent = data[0];
+                section.appendChild(h2);
 
-        const section_x68k = document.getElementById("section-x68k");
-        if((item_x68000.length > 0) && section_x68k ) {
-            const n = item_x68000[0];
-            item_x68000.slice(1).forEach((_, i) => {
-                if(i%n === 0) {
+                // pタグ群
+                const n = data[1];
+                const arr = data.slice(2);
+                const rowCount = Math.ceil(arr.length / n);
+
+                for (let idx = 0; idx < rowCount; idx++) {
                     const p = document.createElement("p");
-                    p.id = `tgX68K_${pad(Math.floor(i/n),3)}`;
-                    section_x68k.appendChild(p);
+                    p.id = `tgCAT${i}_${pad(idx, 3)}`;
+                    section.appendChild(p);
                 }
-            });
-         }
 
-        const section_kancolle = document.getElementById("section-kancolle");
-        if((item_kancolle.length > 0) && section_kancolle ) {
-            const n = item_kancolle[0];
-            item_kancolle.slice(1).forEach((_, i) => {
-                if(i%n === 0) {
-                    const p = document.createElement("p");
-                    p.id = `tgKANCOLLE_${pad(Math.floor(i/n),3)}`;
-                    section_kancolle.appendChild(p);
-                }
+                document.body.appendChild(section);
+            });
+
+            const footer = document.createElement("footer");
+            const p = document.createElement("p");
+            p.innerHTML = STR_FOOTER;
+            footer.appendChild(p);
+            document.body.appendChild(footer);
+        }
+
+        function renderItems() {
+            items.forEach((data, cati) => {
+                if (!data || data.length < 2) return;
+
+                const n = data[1];
+                const arr = data.slice(2);
+
+                arr.forEach((_, i) => {
+                    if (i%n !== 0) return;
+
+                    const type  = arr[i];
+                    const title = arr[i+1] ?? "";
+                    const link  = arr[i+2] ?? "";
+                    const date  = arr[i+3] ?? "";
+                    let extra = "";
+                    if(n > 4) extra = arr[i+4] ?? "";
+
+                    let sbuf = "";
+                    if (type === ITEM_DOWNLOAD) {
+                        sbuf = `<a download="${link}" href="./${link}">${title} </a>`;
+                    } else if (type === ITEM_WEBTOOL) {
+                        sbuf = link ? `<a href="${link}">${title} </a>` : title;
+                    } else {
+                        sbuf = title;
+                    }
+
+                    if (check_new(date)) {
+                        sbuf += `<span class="new">NEW</span>`;
+                    }
+
+                    if (extra) {
+                        sbuf += `<br>&emsp;${extra}`;
+                    }
+
+                    const p = document.getElementById(`tgCAT${cati}_${pad(Math.floor(i/n), 3)}`);
+                    if (p) p.innerHTML = sbuf;
+                });
             });
         }
 
-        main();
+        buildSections();
+        renderItems();
 
     </script>
 </body>
