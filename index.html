@@ -2,7 +2,7 @@
   File: index.html
   Author: UG.
   Created: 2025-07-19
-  Last Updated: 2025-08-11
+  Last Updated: 2026-04-20
   HTML Version: WHATWG HTML Living Standard
 
   License: MIT License
@@ -111,7 +111,7 @@
 
                     let sbuf = "";
                     if (type === ITEM_DOWNLOAD) {
-                        sbuf = `<a download="${link}" href="./${link}">${title} </a>`;
+                        sbuf = `<a download="${link}" href="${link}">${title} </a>`;
                     } else if (type === ITEM_WEBTOOL) {
                         sbuf = link ? `<a href="${link}">${title} </a>` : title;
                     } else {

@@ -36,7 +36,7 @@
             5,
             ITEM_DOWNLOAD, "OPM Tone Editor 'Ｎ' version 1.10", "https://github.com/shimase68000/opm-tone-editor-n/releases/tag/v1.10", "2025-09-14T23:30:00",
                            "２ファイル・２音色データを並行して編集可能なOPM音色エディタ",
-            ITEM_DOWNLOAD, "OED File Viewer Prototype version 0.01", "OEDV001.LZH", "2025-08-01T12:00:00",
+            ITEM_DOWNLOAD, "OED File Viewer Prototype version 0.01", "https://shimase68000.github.io/OEDV001.LZH", "2025-08-01T12:00:00",
                            "OPM Tone Editorで作成したOEDファイルのヘッダ情報を表示するビューア"
         ];
 
