@@ -2,7 +2,7 @@
   File: items.js
   Author: UG.
   Created: 2025-08-02
-  Last Updated: 2026-04-20
+  Last Updated: 2026-08-25
   Description: 
     各カテゴリ（X68000、艦これなど）のアイテム定義を格納するデータファイル。
     HTML本体から <script src="items.js"> により読み込まれる。
@@ -34,9 +34,11 @@
         const item_x68000 = [
             "X680x0",
             5,
-            ITEM_DOWNLOAD, "OPM Tone Editor 'Ｎ' version 1.10", "https://github.com/shimase68000/opm-tone-editor-n/releases/tag/v1.10", "2025-09-14T23:30:00",
+            ITEM_WEBTOOL, "OPM Tone Editor 'Ｎ' version 1.20", "https://github.com/shimase68000/opm-tone-editor-n/releases/download/v1.20/OE120.LZH", "2026-09-22T00:00:00",
                            "２ファイル・２音色データを並行して編集可能なOPM音色エディタ",
-            ITEM_DOWNLOAD, "OED File Viewer Prototype version 0.01", "https://shimase68000.github.io/OEDV001.LZH", "2025-08-01T12:00:00",
+            ITEM_WEBTOOL, "scalekey version 1.10", "https://github.com/shimase68000/scalekey/releases/download/v1.10/SK110.LZH", "2026-08-22T00:00:00",
+                           "常駐型の OPM 演奏モジュール（OPM Tone Editor と組み合わせて使用します）",
+            ITEM_WEBTOOL, "OED File Viewer Prototype version 0.01", "https://shimase68000.github.io/OEDV001.LZH", "2025-08-01T12:00:00",
                            "OPM Tone Editorで作成したOEDファイルのヘッダ情報を表示するビューア"
         ];
 
