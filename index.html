@@ -117,6 +117,21 @@
                         sbuf = title;
                     }
 
+                    const dlfile = (n > 5) ? (arr[i+5] ?? "") : "";
+
+                    if (check_new(date)) {
+                        sbuf += `<span class="new">NEW</span>`;
+                    }
+
+                    if (dlfile) {
+                        const fname = dlfile.split('/').pop();
+                        sbuf += `<span class="dl">&emsp;(<a download href="${dlfile}">${fname}</a>)</span>`;
+                    }
+
+                    if (extra) {
+                        sbuf += `<br>&emsp;${extra}`;
+                    }
+/*
                     if (check_new(date)) {
                         sbuf += `<span class="new">NEW</span>`;
                     }
@@ -124,7 +139,7 @@
                     if (extra) {
                         sbuf += `<br>&emsp;${extra}`;
                     }
-
+*/
                     const p = document.getElementById(`tgCAT${cati}_${pad(Math.floor(i/n), 3)}`);
                     if (p) p.innerHTML = sbuf;
                 });

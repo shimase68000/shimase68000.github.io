@@ -33,13 +33,24 @@
         // Item of X68000
         const item_x68000 = [
             "X680x0",
-            5,
-            ITEM_WEBTOOL, "OPM Tone Editor 'Ｎ' version 1.20", "https://github.com/shimase68000/opm-tone-editor-n/releases/download/v1.20/OE120.LZH", "2026-08-22T14:30:00",
-                           "２ファイル・２音色データを並行して編集可能な OPM 音色エディタ",
-            ITEM_WEBTOOL, "scalekey version 1.10", "https://github.com/shimase68000/scalekey/releases/download/v1.10/SK110.LZH", "2026-08-22T14:30:00",
-                           "常駐型の OPM 演奏モジュール（OPM Tone Editor と組み合わせて使用します）",
-            ITEM_WEBTOOL, "OED File Viewer Prototype version 0.01", "https://shimase68000.github.io/OEDV001.LZH", "2025-08-01T12:00:00",
-                           "OPM Tone Editorで作成したOEDファイルのヘッダ情報を表示するビューア"
+            6,
+            ITEM_WEBTOOL, "OPM Tone Editor 'Ｎ' version 1.20",
+                          "https://github.com/shimase68000/opm-tone-editor-n",
+                          "2026-08-22T14:30:00",
+                          "２ファイル・２音色データを並行して編集可能な OPM 音色エディタ",
+                          "https://github.com/shimase68000/opm-tone-editor-n/releases/download/v1.20/OE120.LZH",
+
+            ITEM_WEBTOOL, "scalekey version 1.10",
+                          "https://github.com/shimase68000/scalekey/",
+                          "2026-08-22T14:30:00",
+                          "常駐型の OPM 演奏モジュール（OPM Tone Editor と組み合わせて使用します）",
+                          "https://github.com/shimase68000/scalekey/releases/download/v1.10/SK110.LZH",
+
+            ITEM_WEBTOOL, "OED File Viewer Prototype version 0.01",
+                          "./index.html",
+                          "2025-08-01T12:00:00",
+                          "OPM Tone Editorで作成したOEDファイルのヘッダ情報を表示するビューア",
+                          "https://shimase68000.github.io/OEDV001.LZH"
         ];
 
         // Item of 艦これ
@@ -48,6 +59,7 @@
             5,
             ITEM_WEBTOOL, "2025梅雨イベント てるてる坊主計算", "./kc_tuyu2025", "2025-07-02T19:00:00",
                           "2025年梅雨イベントのてるてる坊主数計算ツール（開催期間：2025-05-30～2025-06-27）",
+
             ITEM_WEBTOOL, "2025節分イベント 豆計算", "", "",
                           "2025年節分イベントの豆数計算ツール（開催期間：2025-01-28～2025-02-28）",
         ];
