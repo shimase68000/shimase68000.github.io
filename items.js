@@ -34,17 +34,17 @@
         const item_x68000 = [
             "X680x0",
             6,
-            ITEM_WEBTOOL, "OPM Tone Editor 'Ｎ' version 1.20",
+            ITEM_WEBTOOL, "OPM Tone Editor 'Ｎ' version 1.21",
                           "https://github.com/shimase68000/opm-tone-editor-n",
-                          "2026-08-22T14:30:00",
+                          "2026-08-26T22:00:00",
                           "２ファイル・２音色データを並行して編集可能な OPM 音色エディタ",
-                          "https://github.com/shimase68000/opm-tone-editor-n/releases/download/v1.20/OE120.LZH",
+                          "https://github.com/shimase68000/opm-tone-editor-n/releases/download/v1.21/OE121.LZH",
 
-            ITEM_WEBTOOL, "scalekey version 1.10",
+            ITEM_WEBTOOL, "scalekey version 1.11",
                           "https://github.com/shimase68000/scalekey/",
-                          "2026-08-22T14:30:00",
+                          "2026-08-26T22:30:00",
                           "常駐型の OPM 演奏モジュール（OPM Tone Editor と組み合わせて使用します）",
-                          "https://github.com/shimase68000/scalekey/releases/download/v1.10/SK110.LZH",
+                          "https://github.com/shimase68000/scalekey/releases/download/v1.11/SK111.LZH",
 
             ITEM_WEBTOOL, "OED File Viewer Prototype version 0.01",
                           "./index.html",
