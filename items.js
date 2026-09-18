@@ -2,7 +2,7 @@
   File: items.js
   Author: UG.
   Created: 2025-08-02
-  Last Updated: 2026-08-25
+  Last Updated: 2026-09-18
   Description: 
     各カテゴリ（X68000、艦これなど）のアイテム定義を格納するデータファイル。
     HTML本体から <script src="items.js"> により読み込まれる。
@@ -35,7 +35,7 @@
             "X680x0",
             6,
             ITEM_WEBTOOL, "OPM Tone Editor 'Ｎ' version 1.21",
-                          "https://github.com/shimase68000/opm-tone-editor-n",
+                          "https://github.com/shimase68000/opm-tone-editor-n/",
                           "2026-08-26T22:00:00",
                           "２ファイル・２音色データを並行して編集可能な OPM 音色エディタ",
                           "https://github.com/shimase68000/opm-tone-editor-n/releases/download/v1.21/OE121.LZH",
@@ -50,7 +50,13 @@
                           "./index.html",
                           "2025-08-01T12:00:00",
                           "OPM Tone Editorで作成したOEDファイルのヘッダ情報を表示するビューア",
-                          "https://shimase68000.github.io/OEDV001.LZH"
+                          "https://shimase68000.github.io/OEDV001.LZH",
+
+            ITEM_WEBTOOL, "FDFORMAT2 version 1.00",
+                          "https://github.com/shimase68000/fdformat2/",
+                          "2026-09-18T16:20:00",
+                          "４ドライブ並行処理型の 2HD フロッピーディスクフォーマッタ",
+                          "https://github.com/shimase68000/fdformat2/releases/download/v1.00/FDF2V100.LZH"
         ];
 
         // Item of 艦これ
@@ -65,5 +71,5 @@
         ];
 
         const items = [ item_x68000, item_kancolle ];
-        const STR_FOOTER = `&copy; 2025-2026 UG. All rights reserved.`;
+        const STR_FOOTER = `Copyright &copy; 2025-2026 UG.<br>This software is released under the MIT License.`;
 
