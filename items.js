@@ -36,7 +36,7 @@
             6,
             ITEM_WEBTOOL, "OPM Tone Editor 'Ｎ' version 1.23",
                           "https://github.com/shimase68000/opm-tone-editor-n/",
-                          "2026-11-16T19:15:00",
+                          "2026-11-16T21:15:00",
                           "２ファイル・２音色データを並行して編集可能な OPM 音色エディタ",
                           "https://github.com/shimase68000/opm-tone-editor-n/releases/download/v1.23/OE123.LZH",
 
