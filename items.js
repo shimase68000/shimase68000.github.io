@@ -2,10 +2,10 @@
   File: items.js
   Author: UG.
   Created: 2025-08-02
-  Last Updated: 2026-11-16
+  Last Updated: 2026-11-19
   Description: 
-    å„ã‚«ãƒ†ã‚´ãƒªï¼ˆX68000ã€è‰¦ã“ã‚Œãªã©ï¼‰ã®ã‚¢ã‚¤ãƒ†ãƒ å®šç¾©ã‚’æ ¼ç´ã™ã‚‹ãƒ‡ãƒ¼ã‚¿ãƒ•ã‚¡ã‚¤ãƒ«ã€‚
-    HTMLæœ¬ä½“ã‹ã‚‰ <script src="items.js"> ã«ã‚ˆã‚Šèª­ã¿è¾¼ã¾ã‚Œã‚‹ã€‚
+    ŠeƒJƒeƒSƒŠiX68000AŠÍ‚±‚êASpecification‚È‚Çj‚ÌƒAƒCƒeƒ€’è‹`‚ğŠi”[‚·‚éƒf[ƒ^ƒtƒ@ƒCƒ‹B
+    HTML–{‘Ì‚©‚ç <script src="items.js"> ‚É‚æ‚è“Ç‚İ‚Ü‚ê‚éB
 
   License: MIT License
   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -34,48 +34,58 @@
         const item_x68000 = [
             "X680x0",
             6,
-            ITEM_WEBTOOL, "OPM Tone Editor 'ï¼®' version 1.23",
+            ITEM_WEBTOOL, "OPM Tone Editor '‚m' version 1.23",
                           "https://github.com/shimase68000/opm-tone-editor-n/",
                           "2026-11-16T21:15:00",
-                          "ï¼’ãƒ•ã‚¡ã‚¤ãƒ«ãƒ»ï¼’éŸ³è‰²ãƒ‡ãƒ¼ã‚¿ã‚’ä¸¦è¡Œã—ã¦ç·¨é›†å¯èƒ½ãª OPM éŸ³è‰²ã‚¨ãƒ‡ã‚£ã‚¿",
+                          "‚Qƒtƒ@ƒCƒ‹E‚Q‰¹Fƒf[ƒ^‚ğ•Às‚µ‚Ä•ÒW‰Â”\‚È OPM ‰¹FƒGƒfƒBƒ^",
                           "https://github.com/shimase68000/opm-tone-editor-n/releases/download/v1.23/OE123.LZH",
 
             ITEM_WEBTOOL, "scalekey version 1.11",
                           "https://github.com/shimase68000/scalekey/",
                           "2026-08-26T22:30:00",
-                          "å¸¸é§å‹ã® OPM æ¼”å¥ãƒ¢ã‚¸ãƒ¥ãƒ¼ãƒ«ï¼ˆOPM Tone Editor ã¨çµ„ã¿åˆã‚ã›ã¦ä½¿ç”¨ã—ã¾ã™ï¼‰",
+                          "í’“Œ^‚Ì OPM ‰‰‘tƒ‚ƒWƒ…[ƒ‹iOPM Tone Editor ‚Æ‘g‚İ‡‚í‚¹‚Äg—p‚µ‚Ü‚·j",
                           "https://github.com/shimase68000/scalekey/releases/download/v1.11/SK111.LZH",
 
             ITEM_WEBTOOL, "OED File Viewer Prototype version 0.01",
                           "./index.html",
                           "2025-08-01T12:00:00",
-                          "OPM Tone Editorã§ä½œæˆã—ãŸOEDãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒ˜ãƒƒãƒ€æƒ…å ±ã‚’è¡¨ç¤ºã™ã‚‹ãƒ“ãƒ¥ãƒ¼ã‚¢",
+                          "OPM Tone Editor‚Åì¬‚µ‚½ OED ƒtƒ@ƒCƒ‹‚Ìƒwƒbƒ_î•ñ‚ğ•\¦‚·‚éƒrƒ…[ƒA",
                           "https://shimase68000.github.io/OEDV001.LZH",
 
             ITEM_WEBTOOL, "FDFORMAT2 version 1.00",
                           "https://github.com/shimase68000/fdformat2/",
                           "2026-09-18T16:20:00",
-                          "ï¼”ãƒ‰ãƒ©ã‚¤ãƒ–ä¸¦è¡Œå‡¦ç†å‹ã® 2HD ãƒ•ãƒ­ãƒƒãƒ”ãƒ¼ãƒ‡ã‚£ã‚¹ã‚¯ãƒ•ã‚©ãƒ¼ãƒãƒƒã‚¿",
+                          "‚Sƒhƒ‰ƒCƒu•Àsˆ—Œ^‚Ì 2HD ƒtƒƒbƒs[ƒfƒBƒXƒNƒtƒH[ƒ}ƒbƒ^",
                           "https://github.com/shimase68000/fdformat2/releases/download/v1.00/FDF2V100.LZH"
         ];
-
-        // Item of è‰¦ã“ã‚Œ
-        const item_kancolle = [
-            "è‰¦ã“ã‚Œ",
+        // Item of Specification
+        const item_spec = [
+            "Specification",
             5,
-            ITEM_WEBTOOL, "2026æ¢…é›¨ã‚¤ãƒ™ãƒ³ãƒˆ ã¦ã‚‹ã¦ã‚‹åŠä¸»è¨ˆç®—", "./kc_tuyu2026", "2026-09-23T15:55:00",
-                          "2026å¹´æ¢…é›¨ã‚¤ãƒ™ãƒ³ãƒˆã®ã¦ã‚‹ã¦ã‚‹åŠä¸»æ•°è¨ˆç®—ãƒ„ãƒ¼ãƒ«ï¼ˆé–‹å‚¬æœŸé–“ï¼š2026-05-29ï½2026-06-26ï¼‰",
+            ITEM_WEBTOOL, "OED File Format Specification OED000 version 1.01", "https://github.com/shimase68000/oed-format", "2026-03-26T14:36:00",
+                          "FM ‰¹Œ¹‚Ì‰¹Fƒf[ƒ^ƒ‰ƒCƒuƒ‰ƒŠiOED ƒtƒ@ƒCƒ‹j‚ÌƒtƒH[ƒ}ƒbƒgd—l",
 
-            ITEM_WEBTOOL, "2026ç¯€åˆ†ã‚¤ãƒ™ãƒ³ãƒˆ è±†è¨ˆç®—", "./kc_setubun2026", "2026-09-25T14:00:00",
-                          "2026å¹´ç¯€åˆ†ã‚¤ãƒ™ãƒ³ãƒˆã®è±†æ•°è¨ˆç®—ãƒ„ãƒ¼ãƒ«ï¼ˆé–‹å‚¬æœŸé–“ï¼š2026-01-28ï½2026-02-13ï¼‰",
-
-            ITEM_WEBTOOL, "2025æ¢…é›¨ã‚¤ãƒ™ãƒ³ãƒˆ ã¦ã‚‹ã¦ã‚‹åŠä¸»è¨ˆç®—", "./kc_tuyu2025", "2025-07-02T19:00:00",
-                          "2025å¹´æ¢…é›¨ã‚¤ãƒ™ãƒ³ãƒˆã®ã¦ã‚‹ã¦ã‚‹åŠä¸»æ•°è¨ˆç®—ãƒ„ãƒ¼ãƒ«ï¼ˆé–‹å‚¬æœŸé–“ï¼š2025-05-30ï½2025-06-27ï¼‰",
-
-            ITEM_WEBTOOL, "2025ç¯€åˆ†ã‚¤ãƒ™ãƒ³ãƒˆ è±†è¨ˆç®—", "./kc_setubun2025", "2026-09-25T14:00:00",
-                          "2025å¹´ç¯€åˆ†ã‚¤ãƒ™ãƒ³ãƒˆã®è±†æ•°è¨ˆç®—ãƒ„ãƒ¼ãƒ«ï¼ˆé–‹å‚¬æœŸé–“ï¼š2025-01-28ï½2025-02-28ï¼‰"
+            ITEM_WEBTOOL, "OTG (OED Operator Topology Glyph) Syntax Specification draft version 0.03", "https://github.com/shimase68000/otg", "2026-11-19T13:00:00",
+                          "FM ‰¹Œ¹‚ÌƒIƒyƒŒ[ƒ^Ú‘±\‘¢iƒAƒ‹ƒSƒŠƒYƒ€j‚ğ ASCII •¶š—ñ‚Å‹Lq‚·‚é DSL ‚Ì•¶–@d—l"
         ];
 
-        const items = [ item_x68000, item_kancolle ];
+        // Item of ŠÍ‚±‚ê
+        const item_kancolle = [
+            "ŠÍ‚±‚ê",
+            5,
+            ITEM_WEBTOOL, "2026”~‰JƒCƒxƒ“ƒg ‚Ä‚é‚Ä‚é–VåŒvZ", "./kc_tuyu2026", "2026-09-23T15:55:00",
+                          "2026”N”~‰JƒCƒxƒ“ƒg‚Ì‚Ä‚é‚Ä‚é–Vå”ŒvZƒc[ƒ‹iŠJÃŠúŠÔF2026-05-29`2026-06-26j",
+
+            ITEM_WEBTOOL, "2026ß•ªƒCƒxƒ“ƒg “¤ŒvZ", "./kc_setubun2026", "2026-09-25T14:00:00",
+                          "2026”Nß•ªƒCƒxƒ“ƒg‚Ì“¤”ŒvZƒc[ƒ‹iŠJÃŠúŠÔF2026-01-28`2026-02-13j",
+
+            ITEM_WEBTOOL, "2025”~‰JƒCƒxƒ“ƒg ‚Ä‚é‚Ä‚é–VåŒvZ", "./kc_tuyu2025", "2025-07-02T19:00:00",
+                          "2025”N”~‰JƒCƒxƒ“ƒg‚Ì‚Ä‚é‚Ä‚é–Vå”ŒvZƒc[ƒ‹iŠJÃŠúŠÔF2025-05-30`2025-06-27j",
+
+            ITEM_WEBTOOL, "2025ß•ªƒCƒxƒ“ƒg “¤ŒvZ", "./kc_setubun2025", "2026-09-25T14:00:00",
+                          "2025”Nß•ªƒCƒxƒ“ƒg‚Ì“¤”ŒvZƒc[ƒ‹iŠJÃŠúŠÔF2025-01-28`2025-02-28j"
+        ];
+
+        const items = [ item_x68000, item_spec, item_kancolle ];
         const STR_FOOTER = `Copyright &copy; 2025-2026 UG.<br>This software is released under the MIT License.`;
 
