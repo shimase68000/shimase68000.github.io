@@ -4,8 +4,8 @@
   Created: 2025-08-02
   Last Updated: 2026-11-19
   Description: 
-    �e�J�e�S���iX68000�A�͂���ASpecification�Ȃǁj�̃A�C�e����`���i�[����f�[�^�t�@�C���B
-    HTML�{�̂��� <script src="items.js"> �ɂ��ǂݍ��܂��B
+    各カテゴリ（X68000、艦これ、Specificationなど）のアイテム定義を格納するデータファイル。
+    HTML本体から <script src="items.js"> により読み込まれる。
 
   License: MIT License
   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -34,56 +34,56 @@
         const item_x68000 = [
             "X680x0",
             6,
-            ITEM_WEBTOOL, "OPM Tone Editor '�m' version 1.23",
+            ITEM_WEBTOOL, "OPM Tone Editor 'Ｎ' version 1.23",
                           "https://github.com/shimase68000/opm-tone-editor-n/",
                           "2026-11-16T21:15:00",
-                          "�Q�t�@�C���E�Q���F�f�[�^����s���ĕҏW�\�� OPM ���F�G�f�B�^",
+                          "２ファイル・２音色データを並行して編集可能な OPM 音色エディタ",
                           "https://github.com/shimase68000/opm-tone-editor-n/releases/download/v1.23/OE123.LZH",
 
             ITEM_WEBTOOL, "scalekey version 1.11",
                           "https://github.com/shimase68000/scalekey/",
                           "2026-08-26T22:30:00",
-                          "�풓�^�� OPM ���t���W���[���iOPM Tone Editor �Ƒg�ݍ��킹�Ďg�p���܂��j",
+                          "常駐型の OPM 演奏モジュール（OPM Tone Editor と組み合わせて使用します）",
                           "https://github.com/shimase68000/scalekey/releases/download/v1.11/SK111.LZH",
 
             ITEM_WEBTOOL, "OED File Viewer Prototype version 0.01",
                           "./index.html",
                           "2025-08-01T12:00:00",
-                          "OPM Tone Editor�ō쐬���� OED �t�@�C���̃w�b�_����\������r���[�A",
+                          "OPM Tone Editorで作成した OED ファイルのヘッダ情報を表示するビューア",
                           "https://shimase68000.github.io/OEDV001.LZH",
 
             ITEM_WEBTOOL, "FDFORMAT2 version 1.00",
                           "https://github.com/shimase68000/fdformat2/",
                           "2026-09-18T16:20:00",
-                          "�S�h���C�u���s�����^�� 2HD �t���b�s�[�f�B�X�N�t�H�[�}�b�^",
+                          "４ドライブ並行処理型の 2HD フロッピーディスクフォーマッタ",
                           "https://github.com/shimase68000/fdformat2/releases/download/v1.00/FDF2V100.LZH"
         ];
-        // Item of Specification
+        // Item of Specifications
         const item_spec = [
-            "Specification",
+            "Specifications",
             5,
             ITEM_WEBTOOL, "OED File Format Specification OED000 version 1.01", "https://github.com/shimase68000/oed-format", "2026-03-26T14:36:00",
-                          "FM �����̉��F�f�[�^���C�u�����iOED �t�@�C���j�̃t�H�[�}�b�g�d�l",
+                          "FM 音源の音色データライブラリ（OED ファイル）のフォーマット仕様",
 
             ITEM_WEBTOOL, "OTG (OED Operator Topology Glyph) Syntax Specification draft version 0.03", "https://github.com/shimase68000/otg", "2026-11-19T13:00:00",
-                          "FM �����̃I�y���[�^�ڑ��\���i�A���S���Y���j�� ASCII ������ŋL�q���� DSL �̕��@�d�l"
+                          "FM 音源のオペレータ接続構造（アルゴリズム）を ASCII 文字列で記述する DSL の文法仕様"
         ];
 
-        // Item of �͂���
+        // Item of 艦これ
         const item_kancolle = [
-            "�͂���",
+            "艦これ",
             5,
-            ITEM_WEBTOOL, "2026�~�J�C�x���g �Ă�Ă�V��v�Z", "./kc_tuyu2026", "2026-09-23T15:55:00",
-                          "2026�N�~�J�C�x���g�̂Ă�Ă�V�吔�v�Z�c�[���i�J�Ê��ԁF2026-05-29�`2026-06-26�j",
+            ITEM_WEBTOOL, "2026梅雨イベント てるてる坊主計算", "./kc_tuyu2026", "2026-09-23T15:55:00",
+                          "2026年梅雨イベントのてるてる坊主数計算ツール（開催期間：2026-05-29～2026-06-26）",
 
-            ITEM_WEBTOOL, "2026�ߕ��C�x���g ���v�Z", "./kc_setubun2026", "2026-09-25T14:00:00",
-                          "2026�N�ߕ��C�x���g�̓����v�Z�c�[���i�J�Ê��ԁF2026-01-28�`2026-02-13�j",
+            ITEM_WEBTOOL, "2026節分イベント 豆計算", "./kc_setubun2026", "2026-09-25T14:00:00",
+                          "2026年節分イベントの豆数計算ツール（開催期間：2026-01-28～2026-02-13）",
 
-            ITEM_WEBTOOL, "2025�~�J�C�x���g �Ă�Ă�V��v�Z", "./kc_tuyu2025", "2025-07-02T19:00:00",
-                          "2025�N�~�J�C�x���g�̂Ă�Ă�V�吔�v�Z�c�[���i�J�Ê��ԁF2025-05-30�`2025-06-27�j",
+            ITEM_WEBTOOL, "2025梅雨イベント てるてる坊主計算", "./kc_tuyu2025", "2025-07-02T19:00:00",
+                          "2025年梅雨イベントのてるてる坊主数計算ツール（開催期間：2025-05-30～2025-06-27）",
 
-            ITEM_WEBTOOL, "2025�ߕ��C�x���g ���v�Z", "./kc_setubun2025", "2026-09-25T14:00:00",
-                          "2025�N�ߕ��C�x���g�̓����v�Z�c�[���i�J�Ê��ԁF2025-01-28�`2025-02-28�j"
+            ITEM_WEBTOOL, "2025節分イベント 豆計算", "./kc_setubun2025", "2026-09-25T14:00:00",
+                          "2025年節分イベントの豆数計算ツール（開催期間：2025-01-28～2025-02-28）"
         ];
 
         const items = [ item_x68000, item_spec, item_kancolle ];
