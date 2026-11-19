@@ -49,7 +49,7 @@
             ITEM_WEBTOOL, "OED File Viewer Prototype version 0.01",
                           "./index.html",
                           "2025-08-01T12:00:00",
-                          "OPM Tone Editorで作成した OED ファイルのヘッダ情報を表示するビューア",
+                          "OPM Tone Editor で作成した OED ファイルのヘッダ情報を表示するビューア",
                           "https://shimase68000.github.io/OEDV001.LZH",
 
             ITEM_WEBTOOL, "FDFORMAT2 version 1.00",
