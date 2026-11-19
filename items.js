@@ -58,7 +58,7 @@
                           "４ドライブ並行処理型の 2HD フロッピーディスクフォーマッタ",
                           "https://github.com/shimase68000/fdformat2/releases/download/v1.00/FDF2V100.LZH"
         ];
-        // Item of Specifications
+        // Item of Specification
         const item_spec = [
             "Specifications",
             5,
