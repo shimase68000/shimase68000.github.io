@@ -4,7 +4,7 @@
   Created: 2025-08-02
   Last Updated: 2026-11-19
   Description: 
-    各カテゴリ（X68000、艦これ、Specificationなど）のアイテム定義を格納するデータファイル。
+    各カテゴリ（X68000、艦これ など）のアイテム定義を格納するデータファイル。
     HTML本体から <script src="items.js"> により読み込まれる。
 
   License: MIT License
@@ -29,6 +29,20 @@
 
         const ITEM_DOWNLOAD = 1;
         const ITEM_WEBTOOL  = 2;
+
+        // Item of Windows
+        const item_windows = [
+            "Windows",
+            5,
+            ITEM_WEBTOOL, "Coda Prototype version 0.00", "./index.html", "",
+                          "多機能音楽プレイヤー",
+
+            ITEM_WEBTOOL, "NViewer Prototype version 0.00", "./index.html", "",
+                          "フレームレス画像ビューア",
+
+            ITEM_WEBTOOL, "VMixer Prototype version 0.00", "./index.html", "",
+                          "ボリュームコントローラ"
+        ];
 
         // Item of X68000
         const item_x68000 = [
@@ -58,6 +72,7 @@
                           "４ドライブ並行処理型の 2HD フロッピーディスクフォーマッタ",
                           "https://github.com/shimase68000/fdformat2/releases/download/v1.00/FDF2V100.LZH"
         ];
+
         // Item of Specification
         const item_spec = [
             "Specifications",
@@ -86,6 +101,6 @@
                           "2025年節分イベントの豆数計算ツール（開催期間：2025-01-28～2025-02-28）"
         ];
 
+//      const items = [ item_windows, item_x68000, item_spec, item_kancolle ];
         const items = [ item_x68000, item_spec, item_kancolle ];
         const STR_FOOTER = `Copyright &copy; 2025-2026 UG.<br>This software is released under the MIT License.`;
-
